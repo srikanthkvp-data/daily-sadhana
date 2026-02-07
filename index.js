@@ -3,14 +3,17 @@ fetch("mantras.json")
   .then(data => {
     const container = document.getElementById("mantras");
 
-    Object.values(data).forEach(m => {
-      const div = document.createElement("div");
-      div.innerHTML = `<h3>${m.title}</h3><p>${m.text}</p>`;
-      container.appendChild(div);
-    });
-  });
+    Object.values(data)
+      .sort((a, b) => a.order - b.order)
+      .forEach(m => {
+        const section = document.createElement("section");
+        section.className = "mantra-section";
 
-document.getElementById("generate").onclick = () => {
-  document.getElementById("sankalpa").textContent =
-    "Saṅkalpa will appear here.";
-};
+        section.innerHTML = `
+          <h2>${m.title}</h2>
+          <pre>${m.text}</pre>
+        `;
+
+        container.appendChild(section);
+      });
+  });

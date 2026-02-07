@@ -1,16 +1,39 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #111;
-  color: #eee;
-  padding: 24px;
+  background: #0f0f0f;
+  color: #eaeaea;
+  padding: 32px 20px;
+  max-width: 720px;
+  margin: auto;
 }
 
 h1 {
-  margin-bottom: 16px;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 500;
 }
 
 button {
-  padding: 10px 16px;
+  display: none; /* hidden until API later */
+}
+
+.mantra-section {
+  margin-bottom: 36px;
+}
+
+.mantra-section h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #f0f0f0;
+}
+
+.mantra-section pre {
+  white-space: pre-wrap;
+  line-height: 1.8;
   font-size: 16px;
-  cursor: pointer;
+  color: #dcdcdc;
+  background: none;
+  border: none;
+  margin: 0;
 }
