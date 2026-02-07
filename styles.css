@@ -10,7 +10,7 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 32px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 button {
@@ -22,9 +22,9 @@ button {
 }
 
 .mantra-section h2 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 18px;
   color: #f0f0f0;
 }
 
@@ -35,5 +35,5 @@ button {
   color: #dcdcdc;
   background: none;
   border: none;
-  margin: 0;
+  margin: 0.5;
 }
