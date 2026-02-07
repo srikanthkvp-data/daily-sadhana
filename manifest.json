@@ -1,8 +1,15 @@
 {
-  "name": "Daily Sādhana",
-  "short_name": "Sādhana",
+  "name": "నిత్య సాధన",
+  "short_name": "సాధన",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000"
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
