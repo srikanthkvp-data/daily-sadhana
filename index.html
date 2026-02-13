@@ -2,13 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>నిత్య సాధన</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <h1>నిత్య సాధన</h1>
+
+  <div class="subtitle">
+    శుక్ల యజుర్వేదం · ఆపస్తంబ గృహ్య–ధర్మ సూత్ర పరంపర
+    <div class="subtitle-note">
+      (కాత్యాయన ప్రాయోగిక సంప్రదాయ ఆధారంగా)
+    </div>
+  </div>
+
+  <div class="location-selector">
+    <label for="location">స్థలం:</label>
+    <select id="location">
+      <option value="hyderabad">హైదరాబాద్</option>
+      <option value="tenali">తెనాలి</option>
+    </select>
+  </div>
+  
+  <div class="mode-toggle">
+    <span>Plain</span>
+    <label class="switch">
+      <input type="checkbox" id="focusToggle" checked />
+      <span class="slider"></span>
+    </label>
+    <span>Focus</span>
+  </div>
+
+
 
   <!-- <button id="generate">Generate Today’s Saṅkalpa</button> -->
 
@@ -16,6 +45,7 @@
 
   <div id="mantras"></div>
 
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
+
 </body>
 </html>

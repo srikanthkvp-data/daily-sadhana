@@ -1,39 +1,281 @@
+/* =========================
+   BASE
+========================= */
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f0f0f;
+  background: #040c1d; /* softer than pure black */
   color: #eaeaea;
   padding: 32px 20px;
   max-width: 720px;
   margin: auto;
 }
 
+/* =========================
+   PAGE TITLE
+========================= */
+
 h1 {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
-button {
-  display: none; /* hidden until API later */
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #c4c4c4;
+  margin-top: -14px;
+  margin-bottom: 44px;
+  letter-spacing: 0.4px;
+  line-height: 1.6;
 }
 
-.mantra-section {
+.subtitle-note {
+  font-size: 13px;
+  color: #a9a9a9;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.subtitle::after {
+  content: "";
+  display: block;
+  width: 420px;
+  height: 1px;
+  background: #2a2f3a;
+  margin: 28px auto 0;
+}
+
+/* =========================
+   LOCATION SELECTOR
+========================= */
+
+.location-selector {
+  margin: 28px 0 44px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.location-selector label {
+  margin-right: 8px;
+  color: #cfcfcf;
+}
+
+.location-selector select {
+  background: #161a22;
+  color: #f0f0f0;
+  border: 1px solid #3a3f4b;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* =========================
+   SECTION BANDING (KEY)
+========================= */
+
+.section {
+  padding: 28px 20px;
+  margin: 0 -20px 56px;
+}
+
+.section:nth-of-type(odd) {
+  background: #0f1115;
+}
+
+.section:nth-of-type(even) {
+  background: #141720;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section-heading {
+  text-align: center;
   margin-bottom: 36px;
 }
 
-.mantra-section h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 18px;
-  color: #f0f0f0;
+.section-heading h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
 }
 
+.section-heading .section-subtitle {
+  font-size: 14px;
+  color: #b5b5b5;
+  letter-spacing: 0.6px;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #2a2f3a;
+  margin: 20px auto 0;
+}
+
+/* =========================
+   MANTRA BLOCKS
+========================= */
+
+.mantra-section {
+  margin-bottom: 40px;
+}
+
+/* Step titles */
+.mantra-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #f4f4f4;
+}
+
+/* Instruction / notes */
+.mantra-note {
+  font-size: 14px;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+/* Actual mantra text */
 .mantra-section pre {
+  font-family: "Noto Serif Telugu", serif;
   white-space: pre-wrap;
-  line-height: 1.8;
-  font-size: 16px;
-  color: #dcdcdc;
+  line-height: 1.9;
+  font-size: 18px;
+  color: #f0f0f0;
   background: none;
   border: none;
-  margin: 0.5;
+  margin: 0;
+  letter-spacing: 0.9px;
+}
+
+/* =========================
+   FINAL CLOSING EMPHASIS
+========================= */
+.mantra-section.closing {
+  margin-top: 64px;
+}
+
+.mantra-section.closing pre {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+}
+.mantra-section.closing h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #c8c8c8;
+  border-bottom: none;
+  margin-bottom: 18px;
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+/* Hide checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #555;
+  transition: 0.3s;
+  border-radius: 22px;
+}
+
+/* Knob */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #eaeaea;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+/* Checked state */
+.switch input:checked + .slider {
+  background-color: #0071f3;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+
+body.focus-on .mantra-section.focus-dim {
+  opacity: 0.35;
+}
+
+body.focus-on .mantra-section.focus-active {
+  opacity: 1;
+}
+
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 14px;
+  }
+
+  .mantra-section pre {
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.6px;
+  }
+
+  .mantra-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 18px;
+  }
+
+  .section-heading .section-subtitle {
+    font-size: 14px;
+  }
+
+  .subtitle::after,
+  .section-heading::after {
+    width: 90%;
+  }
 }
